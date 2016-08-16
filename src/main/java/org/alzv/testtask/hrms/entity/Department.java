@@ -7,6 +7,7 @@ import java.io.Serializable;
 @Table(name= "departments")
 public class Department implements Serializable {
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="dept_no")
@@ -14,6 +15,13 @@ public class Department implements Serializable {
 
     @Column(name = "dept_name")
     private String name;
+
+    public Department() {
+    }
+
+    public Department(String name) {
+        this.name = name;
+    }
 
     public String getId() {
         return id;
